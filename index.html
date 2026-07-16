@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buddy for Sleep — Reserve Yours</title>
+<meta name="description" content="Get the best sleep, no matter how busy you are. Accurately tracks your sleep, learns what helps you sleep better, and adapts daily.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="page">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <img class="hero__photo" src="assets/hero-photo.jpg" alt="">
+    <div class="hero__scrim"></div>
+    <div class="hero__inner">
+      <img class="logo logo--light" src="assets/buddy-logo-vector.svg" alt="Buddy">
+      <div class="hero__body">
+        <p class="kicker" id="hero-kicker">Coming Soon</p>
+        <h1 class="hero__headline" id="hero-headline">Get the best sleep,<br>no matter how busy you are</h1>
+        <p class="hero__subtext" id="hero-subtext">Accurately tracks your sleep, learns what helps you sleep better, and adapts daily to make every night count.</p>
+
+        <form id="step1-form" class="field-row" autocomplete="off">
+          <input type="email" id="email-input" class="input" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn--light">Get early access</button>
+        </form>
+
+        <div id="step2" class="step2" hidden>
+          <p class="confirm">✓ You're on the list — want to lock in more?</p>
+          <div class="field-row">
+            <button type="button" id="deposit-btn" class="btn btn--light">Reserve your Buddy for $5</button>
+            <a href="#" id="skip-link" class="skip">No thanks, just keep me updated</a>
+          </div>
+        </div>
+        <p class="note">Unlock launch pricing &amp; free 2 years of Intelligent Buddy. Fully refundable anytime.</p>
+        <p id="form-error" class="error" hidden></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED IN ============ -->
+  <section class="featured">
+    <p class="featured__label">Previously Featured In</p>
+    <div class="featured__logos">
+      <img src="assets/logo-dezeen.png" alt="Dezeen">
+      <img src="assets/logo-nyt.png" alt="The New York Times">
+      <img src="assets/logo-yanko.png" alt="Yanko Design">
+      <img src="assets/logo-elevenlabs.png" alt="ElevenLabs Grants">
+      <img src="assets/logo-designwanted.png" alt="Design Wanted">
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER STORY ============ -->
+  <section class="section founder">
+    <img class="founder__photo" src="assets/founder-headshot.jpg" alt="Chevy, founder of Buddy">
+    <div class="founder__body">
+      <p class="eyebrow">Why I'm building Buddy for Sleep</p>
+      <h2 class="h2">Sleep is always the first thing I give up when trying to make time for the people I love</h2>
+      <p class="body">Buddy started as a mood lamp collection made to make people smile. Building it alone right out of design school, sleep was always the first thing I gave up, to get more done, or to spend time with people I care about. I'm exhausted but I've also never been happier. Now I'm growing Buddy into a sleep companion built to help people like me make the most of the little rest we get.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section">
+    <h2 class="h2" style="margin-bottom:32px;">How it works</h2>
+    <div class="grid-3">
+      <div class="card">
+        <img class="card__photo" src="assets/sense-photo.jpg" alt="">
+        <h3 class="card__title">Sense</h3>
+        <p class="card__desc">Senses your breathing, heart rate, and movement without invasive cameras or wearables.</p>
+      </div>
+      <div class="card">
+        <img class="card__photo" src="assets/learn-photo.jpg" alt="">
+        <h3 class="card__title">Learn</h3>
+        <p class="card__desc">Notices your patterns night after night, getting to know what actually helps you sleep, and what helps you through the day.</p>
+      </div>
+      <div class="card">
+        <img class="card__photo" src="assets/responds-photo.jpg" alt="">
+        <h3 class="card__title">Responds</h3>
+        <p class="card__desc">Builds your wind-down routine around what it's learned, and keeps adjusting as your sleep changes, so you never have to think about it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRACK YOUR SLEEP ============ -->
+  <section class="section dark track">
+    <div class="track__text">
+      <h2 class="h2 h2--light">Track your sleep, without a wearable or a camera in your room</h2>
+      <p class="body body--light">Your Buddy tracks your breathing, heart rate, and movement with a radar sensor and stores everything on device for maximum privacy.</p>
+    </div>
+    <div class="track__visual">
+      <img class="track__photo" src="assets/tracking-photo.jpg" alt="">
+      <div class="hypnogram">
+        <div class="hypnogram__header">
+          <div>
+            <p class="hypnogram__kicker">Time Asleep</p>
+            <p class="hypnogram__big">5h 42m</p>
+            <p class="hypnogram__sub">12:24 AM – 6:32 AM</p>
+          </div>
+          <div class="hypnogram__pct">
+            <p class="hypnogram__big">93%</p>
+            <p class="hypnogram__sub">Sleep Efficiency</p>
+          </div>
+        </div>
+        <svg viewBox="0 0 720 190" class="hypnogram__svg" preserveAspectRatio="none">
+          <line x1="0" y1="20" x2="720" y2="20" class="lane-line"/>
+          <line x1="0" y1="55" x2="720" y2="55" class="lane-line"/>
+          <line x1="0" y1="90" x2="720" y2="90" class="lane-line"/>
+          <line x1="0" y1="125" x2="720" y2="125" class="lane-line"/>
+          <g class="stage-light">
+            <rect x="0" y="80" width="60" height="20" rx="6"/><rect x="120" y="80" width="40" height="20" rx="6"/>
+            <rect x="330" y="80" width="90" height="20" rx="6"/><rect x="470" y="80" width="60" height="20" rx="6"/>
+            <rect x="600" y="80" width="90" height="20" rx="6"/>
+          </g>
+          <g class="stage-deep">
+            <rect x="60" y="115" width="60" height="20" rx="6"/><rect x="230" y="115" width="30" height="20" rx="6"/>
+            <rect x="420" y="115" width="30" height="20" rx="6"/><rect x="530" y="115" width="20" height="20" rx="6"/>
+          </g>
+          <g class="stage-rem">
+            <rect x="160" y="45" width="70" height="20" rx="6"/><rect x="260" y="45" width="70" height="20" rx="6"/>
+            <rect x="550" y="45" width="50" height="20" rx="6"/><rect x="690" y="45" width="30" height="20" rx="6"/>
+          </g>
+          <g class="stage-awake">
+            <rect x="55" y="10" width="8" height="20" rx="4"/><rect x="225" y="10" width="8" height="20" rx="4"/>
+            <rect x="415" y="10" width="8" height="20" rx="4"/><rect x="695" y="10" width="25" height="20" rx="4"/>
+          </g>
+        </svg>
+        <img class="hr-trace-img" src="assets/hr-trace-line.svg" alt="">
+        <div class="hypnogram__axis">
+          <span>12:24 AM</span><span>2:00</span><span>3:00</span><span>4:00</span><span>5:00</span><span>6:00</span><span>6:32 AM</span>
+        </div>
+        <p class="hypnogram__hr">Heart rate · avg 59 bpm</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUILT FOR DEMANDING LIFESTYLES ============ -->
+  <section class="section warm">
+    <h2 class="h2">Built for real demanding lifestyles</h2>
+    <p class="body">Some nights you're in bed by 9pm. Some nights it's 2am and your brain won't stop thinking about your to-do list. Buddy adapts to both, instead of expecting a version of your life that doesn't exist.</p>
+    <div class="grid-2">
+      <div class="card card--light">
+        <img class="card__photo" src="assets/phoneless-photo.jpg" alt="">
+        <h3 class="card__title">Phoneless interaction</h3>
+        <p class="card__desc">Responds through voice and touch, so you never have to reach for your phone right when you should be putting it down.</p>
+      </div>
+      <div class="card card--light">
+        <img class="card__photo" src="assets/winddown-photo.jpg" alt="">
+        <h3 class="card__title">A wind-down routine that evolves with you</h3>
+        <p class="card__desc">Learns what actually helps you fall asleep and keeps adjusting your routine, knowing that not every night can be perfect.</p>
+      </div>
+      <div class="card card--light">
+        <img class="card__photo" src="assets/alarm-photo.jpg" alt="">
+        <h3 class="card__title">An alarm that knows more than just the time</h3>
+        <p class="card__desc">Knows your calendar and wakes you at the moment that makes sense for your body and your day. Start your morning without feeling groggy.</p>
+      </div>
+      <div class="card card--light">
+        <img class="card__photo" src="assets/companion-photo.jpg" alt="">
+        <h3 class="card__title">Your friendly companion through life</h3>
+        <p class="card__desc">Talk about what's on your mind. Buddy gets to know you over time and becomes a friend that helps you navigate daily life, not just sleep.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="section stats">
+    <h2 class="h2 h2--center">Backed by sleep research</h2>
+    <div class="grid-3 stats__grid">
+      <div class="stat">
+        <p class="stat__big">89%</p>
+        <p class="stat__desc">Radar sleep tracking matches clinical accuracy</p>
+      </div>
+      <div class="stat">
+        <p class="stat__big">37%</p>
+        <p class="stat__desc">Falls asleep faster after talking through stress</p>
+      </div>
+      <div class="stat">
+        <p class="stat__big stat__big--infinity">∞</p>
+        <p class="stat__desc">Limitless nighttime routines uniquely generated for you</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY $5 DEPOSIT ============ -->
+  <section class="section">
+    <h2 class="h2 h2--center">Why place a $5 deposit?</h2>
+    <div class="grid-3 deposit-reasons">
+      <div class="reason">
+        <h3 class="reason__title">Unlocks lowest pricing at launch</h3>
+        <p class="reason__desc">Reserve your spot now to lock in the lowest price Buddy will launch at.</p>
+      </div>
+      <div class="reason">
+        <h3 class="reason__title">FREE 2 years of Intelligent Buddy</h3>
+        <p class="reason__desc">Longer memory and better personalization, normally $59.99/yr, included free for two years.</p>
+      </div>
+      <div class="reason">
+        <h3 class="reason__title">Early access to our first batch</h3>
+        <p class="reason__desc">Reserve your spot now and you'll be one of the first to get your Buddy when we start shipping.</p>
+      </div>
+    </div>
+    <div class="center-btn">
+      <button type="button" class="btn btn--dark" data-deposit-trigger>Reserve now for $5</button>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON CHART ============ -->
+  <section class="section warm">
+    <h2 class="h2">How Buddy compares</h2>
+    <p class="body">A tracker senses. A meditation app or smart alarm acts. Buddy does both, and connects them.</p>
+    <div class="compare">
+      <table class="compare__table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="compare__col--buddy">
+              <img class="compare__icon compare__icon--photo" src="assets/compare-buddy-photo.jpg" alt="">
+              <span class="compare__name">Buddy</span>
+              <span class="compare__desc">A sleep companion that tracks, learns, and helps, all in one.</span>
+            </th>
+            <th>
+              <div class="compare__icon icon-ring"></div>
+              <span class="compare__name">Wearables</span>
+              <span class="compare__desc">Rings and bands that track your sleep and vitals.</span>
+            </th>
+            <th>
+              <div class="compare__icon icon-phone"></div>
+              <span class="compare__name">Mindfulness apps</span>
+              <span class="compare__desc">Guided meditations and sleep sounds on your phone.</span>
+            </th>
+            <th>
+              <div class="compare__icon icon-lamp"></div>
+              <span class="compare__name">Smart alarms</span>
+              <span class="compare__desc">Light and sound alarms that wake you gently.</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Senses sleep, no wearable</td><td class="yes">✓</td><td class="no">–</td><td class="no">–</td><td class="no">–</td></tr>
+          <tr><td>Personalized wind-down routine</td><td class="yes">✓</td><td class="no">–</td><td class="partial">~</td><td class="no">–</td></tr>
+          <tr><td>Wakes at the right moment</td><td class="yes">✓</td><td class="partial">~</td><td class="no">–</td><td class="no">–</td></tr>
+          <tr><td>Adapts as you change</td><td class="yes">✓</td><td class="partial">~</td><td class="no">–</td><td class="no">–</td></tr>
+          <tr><td>Talks through your day</td><td class="yes">✓</td><td class="no">–</td><td class="partial">~</td><td class="no">–</td></tr>
+          <tr><td>Gets smarter over time</td><td class="yes">✓</td><td class="partial">~</td><td class="no">–</td><td class="no">–</td></tr>
+          <tr><td>No charging, nothing to wear</td><td class="yes">✓</td><td class="no">–</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>One device, not three</td><td class="yes">✓</td><td class="no">–</td><td class="no">–</td><td class="no">–</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section cta-band">
+    <h2 class="cta-band__text">Get the best sleep, no matter how busy you are. Starting tonight.</h2>
+    <button type="button" class="btn btn--dark" data-deposit-trigger>Reserve now for $5</button>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq">
+    <h2 class="h2">FAQ</h2>
+    <div class="faq__list">
+      <details class="faq__item" open>
+        <summary>Can I get my money back if I change my mind?</summary>
+        <p>Yes. Your $5 deposit is fully refundable anytime before you place an order, no questions asked, just email us at hello@buddydesign.co and we'll process your refund.</p>
+      </details>
+      <details class="faq__item">
+        <summary>How does Buddy protect my privacy?</summary>
+        <p>Buddy has no camera. It uses mmWave radar to sense your breathing, heart rate, and movement, and keeps your data on-device.</p>
+      </details>
+      <details class="faq__item">
+        <summary>How can a contactless bedside lamp be more accurate than a smart watch or a ring?</summary>
+        <p>Contactless sensing isn't inherently better than a wearable, it's a different way of measuring the same signals, similar to how hospitals monitor vitals without touching a patient. We validate Buddy's readings against real wearable data every night to keep the accuracy honest.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Does it work with two people in bed?</summary>
+        <p>Right now, Buddy is built and tuned to track one person. We're actively testing how it performs with two people sharing a bed, and we'll update this the moment that's fully validated.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Does it improve my sleep, or just track it?</summary>
+        <p>Both. Buddy tracks what's actually happening each night, then uses that to build your wind-down routine, time your alarm, and get to know you better. Tracking isn't the end goal, it's what makes the rest possible.</p>
+      </details>
+      <details class="faq__item">
+        <summary>How does Buddy differ from other smart lamps?</summary>
+        <p>Most smart lamps only control light. Buddy also senses your sleep without a camera or a wearable, then uses what it learns to build your routine and wake you at the right moment. The light is one part of a system built around your actual sleep.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Do I need an app to use it?</summary>
+        <p>No, everything works by voice and touch, night to night. There's a companion app if you want to dig into your sleep data, but it's optional, not required.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Will blankets or pets affect Buddy's sleep tracking?</summary>
+        <p>Blankets don't block Buddy's radar, so normal bedding doesn't affect tracking. A pet moving nearby can occasionally register as movement, but Buddy is built to focus on your vitals, not just motion, so it's not something that typically throws off your results.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__signup">
+      <img class="logo" src="assets/buddy-logo-vector2.svg" alt="Buddy">
+      <p>Join Us And Stay Updated On All Things Buddy</p>
+      <form id="footer-form" class="footer__form">
+        <input type="email" id="footer-email" class="input" placeholder="Email" required>
+        <button type="submit" class="btn btn--dark">Subscribe</button>
+      </form>
+      <p id="footer-msg" class="note" hidden>Thanks, you're on the list!</p>
+    </div>
+    <div class="footer__links">
+      <div>
+        <p class="footer__col-title">Shop</p>
+        <p>Buddy Mood Lamps</p>
+        <p>Buddy for Sleep</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Support</p>
+        <p>FAQs</p>
+        <p>Shipping &amp; Refund Policy</p>
+        <p>Affiliate &amp; Partnerships</p>
+        <p>Privacy Policy</p>
+        <p>Contact Us</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
