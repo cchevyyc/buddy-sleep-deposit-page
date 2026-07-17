@@ -68,6 +68,25 @@
     btn.addEventListener("click", goToDeposit);
   });
 
+  if (window.IntersectionObserver && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var revealTargets = document.querySelectorAll("#page > section:not(.hero), #page > .featured, #page > .footer");
+    var revealIO = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealIO.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealTargets.forEach(function (el) {
+      el.classList.add("reveal");
+      revealIO.observe(el);
+    });
+  }
+
   var siteNav = document.querySelector(".site-nav");
   var heroEl = document.getElementById("hero");
   if (siteNav && heroEl) {
