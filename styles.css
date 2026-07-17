@@ -50,8 +50,8 @@ button{font-family:inherit;cursor:pointer;}
 .site-nav .btn{transition:color 0.2s ease, transform 0.15s ease;}
 .site-nav--dark{background:linear-gradient(to bottom, rgba(237,217,193,0.92), rgba(255,255,255,0.6));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(0,0,0,0.06);}
 .site-nav--dark .logo{filter:none;}
-.site-nav--dark #topbar-cta{color:#000;}
 .site-nav .btn:hover{transform:translateY(-1px);}
+#topbar-cta{background:#fff;color:#000;}
 .kicker{font-family:'Satoshi';font-size:14px;font-weight:500;letter-spacing:0.06em;color:#fff;margin-bottom:16px;}
 .hero__headline{font-size:48px;line-height:1.15;letter-spacing:-0.015em;margin-bottom:20px;font-weight:700;}
 .hero__headline--sm{font-size:36px;margin-bottom:12px;}
