@@ -3,9 +3,7 @@
   var LIST_WAITLIST = "QTWbQm";
   var LIST_DEPOSIT = "WS6cXL";
 
-  // TODO: replace with your real Stripe Payment Link for the $5 deposit.
-  // Create one at https://dashboard.stripe.com/payment-links (one-time price, $5.00).
-  var STRIPE_PAYMENT_LINK = "https://buy.stripe.com/REPLACE_WITH_YOUR_LINK";
+  var STRIPE_PAYMENT_LINK = "https://buy.stripe.com/bJefZg0CdgUxatobkcf3a00";
 
   function subscribeToList(email, listId) {
     return fetch("https://a.klaviyo.com/client/subscriptions/?company_id=" + KLAVIYO_PUBLIC_KEY, {
@@ -28,7 +26,9 @@
   var storedEmail = null;
 
   var step1Form = document.getElementById("step1-form");
+  var step1Content = document.getElementById("step1-content");
   var step2 = document.getElementById("step2");
+  var heroScrim = document.getElementById("hero-scrim");
   var errorEl = document.getElementById("form-error");
 
   if (step1Form) {
@@ -40,8 +40,9 @@
       errorEl.hidden = true;
       subscribeToList(email, LIST_WAITLIST)
         .then(function () {
-          step1Form.hidden = true;
+          step1Content.hidden = true;
           step2.hidden = false;
+          if (heroScrim) heroScrim.classList.add("hero__scrim--step2");
         })
         .catch(function () {
           errorEl.textContent = "Something went wrong, please try again.";
@@ -67,11 +68,24 @@
     btn.addEventListener("click", goToDeposit);
   });
 
-  var skipLink = document.getElementById("skip-link");
-  if (skipLink) {
-    skipLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      step2.hidden = true;
+  var siteNav = document.querySelector(".site-nav");
+  var heroEl = document.getElementById("hero");
+  if (siteNav && heroEl) {
+    var updateNav = function () {
+      var pastHero = window.scrollY > heroEl.offsetHeight - 80;
+      siteNav.classList.toggle("site-nav--dark", pastHero);
+    };
+    window.addEventListener("scroll", updateNav, { passive: true });
+    updateNav();
+  }
+
+  var topbarCta = document.getElementById("topbar-cta");
+  if (topbarCta) {
+    topbarCta.addEventListener("click", function (e) {
+      if (step1Content && !step1Content.hidden) {
+        e.preventDefault();
+        document.getElementById("email-input").focus();
+      }
     });
   }
 
