@@ -226,9 +226,10 @@ button{font-family:inherit;cursor:pointer;}
   .btn--white-green{font-size:14px;height:36px;padding:0 24px;}
   .btn--translucent.btn--lg{font-size:14px;height:36px;}
 
-  /* Section headings: Figma mobile uses ~24px uniformly */
-  .h2{font-size:24px;}
-  .body{font-size:14px;max-width:100%;}
+  /* Section headings: Figma mobile uses ~24px uniformly, centered except FAQ */
+  .h2{font-size:24px;text-align:center;}
+  .faq .h2{text-align:left;}
+  .body{font-size:14px;max-width:100%;text-align:center;}
 
   /* Featured In */
   .featured__label{font-size:14px;}
