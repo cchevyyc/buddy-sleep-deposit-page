@@ -208,3 +208,88 @@ button{font-family:inherit;cursor:pointer;}
 @media (max-width: 480px){
   :root{--side-gutter:20px;}
 }
+
+/* ============ MOBILE (matches Figma "Deposit Landing Page — Mobile") ============ */
+.hiw__mobile-subtext{display:none;}
+.footer__links--mobile{display:none;}
+
+@media (max-width: 640px){
+  /* Hero: centered, smaller type, vertically centered instead of bottom-anchored */
+  .hero__inner{justify-content:center;padding-top:90px;padding-bottom:40px;}
+  .hero__body{margin-top:0;max-width:100%;text-align:center;}
+  #step2{margin-top:20px;}
+  .kicker,.confirm{text-align:center;}
+  .hero__headline{font-size:30px;line-height:1.25;}
+  .hero__headline--sm{font-size:24px;}
+  .hero__subtext{font-size:14px;max-width:100%;margin-left:auto;margin-right:auto;}
+  .hero-capsule{max-width:340px;margin:0 auto;}
+  .btn--white-green{font-size:14px;height:36px;padding:0 24px;}
+  .btn--translucent.btn--lg{font-size:14px;height:36px;}
+
+  /* Section headings: Figma mobile uses ~24px uniformly */
+  .h2{font-size:24px;}
+  .body{font-size:14px;max-width:100%;}
+
+  /* Featured In */
+  .featured__label{font-size:14px;}
+  .featured__logos{gap:28px;}
+
+  /* Founder */
+  .founder{gap:24px;}
+  .founder__photo{width:240px;height:240px;}
+  .founder__eyebrow{font-size:13px;}
+  .founder__headline{font-size:16px;margin-bottom:12px;}
+  .founder__desc{font-size:14px;}
+
+  /* How it works: mobile card style is white bg + image on top only, dark text below */
+  .hiw__mobile-subtext{display:block;font-size:16px;color:var(--text-muted2);text-align:center;margin-top:8px;}
+  .overlay-card--tall{aspect-ratio:auto;background:#fff;border:1px solid var(--border);}
+  .overlay-card--tall .overlay-card__photo{position:static;width:100%;height:190px;object-fit:cover;border-radius:11px 11px 0 0;}
+  .overlay-card--tall .overlay-card__scrim{display:none;}
+  .overlay-card--tall .overlay-card__text{position:static;left:auto;right:auto;bottom:auto;padding:16px;}
+  .overlay-card--tall .overlay-card__title{color:#000;font-size:16px;}
+  .overlay-card--tall .overlay-card__desc{color:var(--text-muted2);font-size:14px;}
+
+  /* Functionalities */
+  .func__subtext{font-size:14px;text-align:center;max-width:100%;}
+  .overlay-card__title{font-size:16px;}
+  .overlay-card__desc--lg{font-size:14px;max-width:100%;}
+
+  /* Sleep tracking: drop the side photo, center everything */
+  .track{grid-template-columns:1fr;padding-top:40px;padding-bottom:40px;}
+  .track__visual{display:none;}
+  .track__headline,.track__subtext{text-align:center;max-width:100%;}
+  .track__headline{font-size:22px;}
+  .track__subtext{font-size:13px;}
+  .track__cta{margin-left:auto;margin-right:auto;display:table;}
+
+  /* Stats */
+  .stat__big{font-size:36px;}
+  .stat__big--infinity{font-size:36px;}
+  .stat__desc{font-size:14px;}
+
+  /* Why deposit */
+  .deposit-reasons{margin-top:32px;}
+  .reason__title{font-size:16px;}
+  .reason__desc{font-size:14px;}
+  .reason__icon{height:44px;width:44px;}
+  .reason__icon--gift{height:37px;width:32px;}
+  .reason__icon--delivery{height:29px;width:43px;}
+
+  /* Comparison chart heading */
+  .compare{margin-top:24px;}
+
+  /* Final CTA */
+  .cta-band{padding:28px 20px;}
+  .cta-band__text{font-size:15px;margin-bottom:16px;}
+  .cta-band .btn{height:36px;font-size:14px;padding:0 22px;}
+
+  /* Footer: swap desktop columns for one condensed line */
+  .footer__links--desktop{display:none;}
+  .footer__links--mobile{display:block;font-size:13px;color:var(--footer-text);margin:12px 0 0;}
+  .footer__links--mobile a{color:inherit;text-decoration:none;}
+  .footer__links--mobile a:hover{text-decoration:underline;}
+  .footer__headline{font-size:14px;}
+  .footer-capsule{max-width:100%;}
+  .footer__social{margin-left:0;align-self:flex-start;margin-top:16px;}
+}

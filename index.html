@@ -6,6 +6,8 @@
 <title>Buddy for Sleep — Reserve Yours</title>
 <meta name="description" content="Get the best sleep, no matter how busy you are. Accurately tracks your sleep, learns what helps you sleep better, and adapts daily.">
 <link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="image" href="assets/hero-photo.jpg" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -16,13 +18,13 @@
 
   <!-- ============ STICKY NAV ============ -->
   <header class="site-nav">
-    <img class="logo logo--light" src="assets/buddy-logo-vector.svg" alt="Buddy">
+    <img loading="lazy" decoding="async" class="logo logo--light" src="assets/buddy-logo-vector.svg" alt="Buddy">
     <a href="#hero" id="topbar-cta" class="btn btn--translucent">Get early access</a>
   </header>
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <img class="hero__photo" src="assets/hero-photo.jpg" alt="">
+    <img class="hero__photo" src="assets/hero-photo.jpg" alt="" fetchpriority="high">
     <div class="hero__scrim" id="hero-scrim"></div>
     <div class="hero__inner">
       <div class="hero__body">
@@ -51,18 +53,18 @@
   <section class="featured">
     <p class="featured__label">Previously Featured In</p>
     <div class="featured__logos">
-      <img class="feat--dezeen" src="assets/logo-dezeen.png" alt="Dezeen">
-      <img class="feat--nyt" src="assets/logo-nyt.png" alt="The New York Times">
-      <img class="feat--yanko" src="assets/logo-yanko.png" alt="Yanko Design">
-      <img class="feat--ifaward" src="assets/logo-ifaward.jpg" alt="iF Design Award 2026">
-      <img class="feat--elevenlabs" src="assets/logo-elevenlabs.png" alt="ElevenLabs Grants">
-      <img class="feat--designwanted" src="assets/logo-designwanted.png" alt="Design Wanted">
+      <img loading="lazy" decoding="async" class="feat--dezeen" src="assets/logo-dezeen.png" alt="Dezeen">
+      <img loading="lazy" decoding="async" class="feat--nyt" src="assets/logo-nyt.png" alt="The New York Times">
+      <img loading="lazy" decoding="async" class="feat--yanko" src="assets/logo-yanko.png" alt="Yanko Design">
+      <img loading="lazy" decoding="async" class="feat--ifaward" src="assets/logo-ifaward.jpg" alt="iF Design Award 2026">
+      <img loading="lazy" decoding="async" class="feat--elevenlabs" src="assets/logo-elevenlabs.png" alt="ElevenLabs Grants">
+      <img loading="lazy" decoding="async" class="feat--designwanted" src="assets/logo-designwanted.png" alt="Design Wanted">
     </div>
   </section>
 
   <!-- ============ FOUNDER STORY ============ -->
   <section class="section founder">
-    <img class="founder__photo" src="assets/founder-headshot.jpg" alt="Chevy, founder of Buddy">
+    <img loading="lazy" decoding="async" class="founder__photo" src="assets/founder-headshot.jpg" alt="Chevy, founder of Buddy">
     <div class="founder__body">
       <p class="founder__eyebrow">Why I'm building Buddy for Sleep</p>
       <h2 class="founder__headline">Sleep is always the first thing I give up when trying to make time for the people I love</h2>
@@ -73,9 +75,10 @@
   <!-- ============ HOW IT WORKS ============ -->
   <section class="section warm">
     <h2 class="h2">How it works</h2>
+    <p class="hiw__mobile-subtext">A Buddy that truly understands you</p>
     <div class="grid-3 overlay-grid">
       <div class="overlay-card overlay-card--tall">
-        <img class="overlay-card__photo" src="assets/sense-photo.jpg" alt="">
+        <img loading="lazy" decoding="async" class="overlay-card__photo" src="assets/sense-photo.jpg" alt="">
         <div class="overlay-card__scrim"></div>
         <div class="overlay-card__text">
           <h3 class="overlay-card__title">Sense</h3>
@@ -83,7 +86,7 @@
         </div>
       </div>
       <div class="overlay-card overlay-card--tall">
-        <img class="overlay-card__photo" src="assets/learn-photo.jpg" alt="">
+        <img loading="lazy" decoding="async" class="overlay-card__photo" src="assets/learn-photo.jpg" alt="">
         <div class="overlay-card__scrim"></div>
         <div class="overlay-card__text">
           <h3 class="overlay-card__title">Learn</h3>
@@ -91,7 +94,7 @@
         </div>
       </div>
       <div class="overlay-card overlay-card--tall">
-        <img class="overlay-card__photo" src="assets/responds-photo.jpg" alt="">
+        <img loading="lazy" decoding="async" class="overlay-card__photo" src="assets/responds-photo.jpg" alt="">
         <div class="overlay-card__scrim"></div>
         <div class="overlay-card__text">
           <h3 class="overlay-card__title">Responds</h3>
@@ -107,10 +110,10 @@
       <h2 class="h2 h2--light track__headline">Track your sleep, without a wearable or a camera in your room</h2>
       <p class="body body--light track__subtext">Your Buddy tracks your breathing, heart rate, and movement with a radar sensor and stores everything on device for maximum privacy.</p>
       <a href="#hero" class="btn btn--translucent track__cta">Get early access</a>
-      <img class="track__viz" src="assets/sleep-viz.png" alt="Sleep performance visualization showing 5h 42m asleep, 93% sleep efficiency">
+      <img loading="lazy" decoding="async" class="track__viz" src="assets/sleep-viz.png" alt="Sleep performance visualization showing 5h 42m asleep, 93% sleep efficiency">
     </div>
     <div class="track__visual">
-      <img class="track__photo" src="assets/tracking-photo.jpg" alt="">
+      <img loading="lazy" decoding="async" class="track__photo" src="assets/tracking-photo.jpg" alt="">
     </div>
   </section>
 
@@ -120,7 +123,7 @@
     <p class="body func__subtext">Some nights you're in bed by 9pm. Some nights it's 2 am and your brain won't stop thinking about your to-do list. Buddy adapts to both, instead of expecting a version of your life that doesn't exist.</p>
     <div class="grid-2 overlay-grid">
       <div class="overlay-card">
-        <img class="overlay-card__photo" src="assets/phoneless-photo.jpg" alt="">
+        <img loading="lazy" decoding="async" class="overlay-card__photo" src="assets/phoneless-photo.jpg" alt="">
         <div class="overlay-card__scrim"></div>
         <div class="overlay-card__text">
           <h3 class="overlay-card__title">Phoneless interaction</h3>
@@ -128,7 +131,7 @@
         </div>
       </div>
       <div class="overlay-card">
-        <img class="overlay-card__photo" src="assets/winddown-photo.jpg" alt="">
+        <img loading="lazy" decoding="async" class="overlay-card__photo" src="assets/winddown-photo.jpg" alt="">
         <div class="overlay-card__scrim"></div>
         <div class="overlay-card__text">
           <h3 class="overlay-card__title">A wind-down routine that evolves with you</h3>
@@ -136,7 +139,7 @@
         </div>
       </div>
       <div class="overlay-card">
-        <img class="overlay-card__photo" src="assets/alarm-photo.jpg" alt="">
+        <img loading="lazy" decoding="async" class="overlay-card__photo" src="assets/alarm-photo.jpg" alt="">
         <div class="overlay-card__scrim"></div>
         <div class="overlay-card__text">
           <h3 class="overlay-card__title">An alarm that knows more than just the time</h3>
@@ -144,7 +147,7 @@
         </div>
       </div>
       <div class="overlay-card">
-        <img class="overlay-card__photo" src="assets/companion-photo.jpg" alt="">
+        <img loading="lazy" decoding="async" class="overlay-card__photo" src="assets/companion-photo.jpg" alt="">
         <div class="overlay-card__scrim"></div>
         <div class="overlay-card__text">
           <h3 class="overlay-card__title">Your friendly companion through life</h3>
@@ -178,17 +181,17 @@
     <h2 class="h2 h2--center">Why place a $5 deposit?</h2>
     <div class="grid-3 deposit-reasons">
       <div class="reason">
-        <img class="reason__icon" src="assets/icon-pricetag.svg" alt="">
+        <img loading="lazy" decoding="async" class="reason__icon" src="assets/icon-pricetag.svg" alt="">
         <h3 class="reason__title">Unlocks lowest pricing at launch</h3>
         <p class="reason__desc">Access pre-order pricing and exclusive early adopters only perks</p>
       </div>
       <div class="reason">
-        <img class="reason__icon reason__icon--gift" src="assets/icon-gift.svg" alt="">
+        <img loading="lazy" decoding="async" class="reason__icon reason__icon--gift" src="assets/icon-gift.svg" alt="">
         <h3 class="reason__title">FREE 2 years of Intelligent Buddy</h3>
         <p class="reason__desc">Longer memory and better personalization, normally $59.99/yr</p>
       </div>
       <div class="reason">
-        <img class="reason__icon reason__icon--delivery" src="assets/icon-delivery.svg" alt="">
+        <img loading="lazy" decoding="async" class="reason__icon reason__icon--delivery" src="assets/icon-delivery.svg" alt="">
         <h3 class="reason__title">Early access to our first batch</h3>
         <p class="reason__desc">Be the first to receive your Buddy!</p>
       </div>
@@ -208,7 +211,7 @@
           <tr>
             <th></th>
             <th class="compare__col--buddy">
-              <img class="compare__icon compare__icon--photo" src="assets/compare-buddy-photo.jpg" alt="">
+              <img loading="lazy" decoding="async" class="compare__icon compare__icon--photo" src="assets/compare-buddy-photo.jpg" alt="">
               <span class="compare__name">Buddy</span>
               <span class="compare__desc">Rings and bands that track your sleep and vitals.</span>
             </th>
@@ -307,7 +310,7 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="footer__signup">
-      <img class="logo" src="assets/buddy-logo-vector.svg" alt="Buddy">
+      <img loading="lazy" decoding="async" class="logo" src="assets/buddy-logo-vector.svg" alt="Buddy">
       <p class="footer__headline">Get the best sleep, <br>no matter how busy you are</p>
       <form id="footer-form" class="footer-capsule">
         <input type="email" id="footer-email" class="footer-capsule__input" placeholder="Email" required>
@@ -315,7 +318,7 @@
       </form>
       <p id="footer-msg" class="note note--dark" hidden>Thanks, you're on the list!</p>
     </div>
-    <div class="footer__links">
+    <div class="footer__links footer__links--desktop">
       <div>
         <p class="footer__col-title">Shop</p>
         <p><a href="https://buddydesign.co">Buddy Mood Lamps</a></p>
@@ -329,12 +332,15 @@
         <p><a href="https://buddydesign.co/pages/privacy-policy">Privacy Policy</a></p>
         <p><a href="mailto:hello@buddydesign.co">Contact Us</a></p>
       </div>
-      <div class="footer__social">
-        <a href="https://www.instagram.com/buddydesign.co/" target="_blank" rel="noopener"><img src="assets/social-ig.svg" alt="Instagram"></a>
-        <a href="https://x.com/cchevyyc" target="_blank" rel="noopener"><img src="assets/social-x.svg" alt="X"></a>
-        <a href="https://www.linkedin.com/company/buddydesignco/" target="_blank" rel="noopener"><img src="assets/social-linkedin.svg" alt="LinkedIn"></a>
-      </div>
     </div>
+    <p class="footer__links--mobile">
+      <a href="https://buddydesign.co">Shop Mood Lamps</a> · <a href="mailto:hello@buddydesign.co">Contact Us</a> · <a href="#faq">FAQs</a> · <a href="https://buddydesign.co/pages/privacy-policy">Privacy Policy</a>
+    </p>
+    <div class="footer__social">
+        <a href="https://www.instagram.com/buddydesign.co/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/social-ig.svg" alt="Instagram"></a>
+        <a href="https://x.com/cchevyyc" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/social-x.svg" alt="X"></a>
+        <a href="https://www.linkedin.com/company/buddydesignco/" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/social-linkedin.svg" alt="LinkedIn"></a>
+      </div>
   </footer>
 </div>
 
