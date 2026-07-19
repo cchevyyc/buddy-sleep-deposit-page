@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set up your Buddy</title>
+<meta name="description" content="Create your account and introduce yourself to your Buddy.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5F1EA;
+    --warm-tan:#F4EDE3;
+    --dark:#331610;
+    --text:#2B2420;
+    --text-muted:#8A8074;
+    --border:#EDE8E0;
+    --orange:#FF9500;
+    --error:#B4432E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--cream);color:var(--text);line-height:1.45;
+    min-height:100vh;display:flex;flex-direction:column;
+  }
+  .site-nav{padding:20px 24px;}
+  /* the logo SVG has preserveAspectRatio=none, so both dims must be set */
+  .site-nav img{height:26px;width:80px;display:block;}
+  main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px 80px;}
+  .card{
+    background:#fff;border:1px solid var(--border);border-radius:16px;
+    padding:36px 32px;width:100%;max-width:420px;
+  }
+  .steps{display:flex;gap:8px;margin-bottom:28px;}
+  .steps span{
+    flex:1;height:4px;border-radius:2px;background:var(--border);
+  }
+  .steps span.on{background:var(--orange);}
+  h1{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin-bottom:8px;}
+  .sub{color:var(--text-muted);font-size:14.5px;margin-bottom:24px;}
+  label{display:block;font-size:13px;font-weight:500;margin:16px 0 6px;}
+  input{
+    width:100%;height:46px;border:1px solid var(--border);border-radius:10px;
+    padding:0 14px;font-size:15px;font-family:inherit;background:var(--warm-tan);
+    color:var(--text);outline:none;
+  }
+  input:focus{border-color:var(--dark);background:#fff;}
+  .btn{
+    width:100%;height:48px;border:none;border-radius:10px;font-size:15px;
+    font-weight:600;font-family:inherit;cursor:pointer;margin-top:22px;
+    background:var(--dark);color:#fff;
+  }
+  .btn:disabled{opacity:0.55;cursor:default;}
+  .btn--google{
+    background:#fff;color:var(--text);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;
+  }
+  .divider{display:flex;align-items:center;gap:12px;color:var(--text-muted);font-size:12.5px;margin-top:22px;}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--border);}
+  .tabs{display:flex;background:var(--warm-tan);border-radius:10px;padding:4px;margin-bottom:6px;}
+  .tabs button{
+    flex:1;height:38px;border:none;border-radius:8px;background:transparent;
+    font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;color:var(--text-muted);
+  }
+  .tabs button.on{background:#fff;color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+  .err{
+    display:none;background:#FBEEEA;border:1px solid #EFD4CC;color:var(--error);
+    border-radius:10px;padding:11px 14px;font-size:13.5px;margin-top:16px;
+  }
+  .code-input{
+    text-align:center;font-size:26px;letter-spacing:0.35em;font-weight:600;
+    text-transform:uppercase;height:60px;
+  }
+  .fine{font-size:12.5px;color:var(--text-muted);margin-top:16px;text-align:center;}
+  .fine a{color:var(--text-muted);}
+  .success-mark{font-size:44px;margin-bottom:14px;}
+  .hidden{display:none;}
+  ol{margin:18px 0 0 18px;font-size:14.5px;}
+  ol li{margin-bottom:10px;}
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <a href="/"><img src="../assets/buddy-logo-vector.svg" alt="Buddy"></a>
+  </header>
+
+  <main>
+    <!-- STEP 1: account -->
+    <div class="card" id="step-account">
+      <div class="steps"><span class="on"></span><span></span><span></span></div>
+      <h1>Welcome to Buddy</h1>
+      <p class="sub">First, create your account. Buddy uses your name to say hello properly.</p>
+
+      <div class="tabs">
+        <button id="tab-create" class="on" type="button">Create account</button>
+        <button id="tab-signin" type="button">Sign in</button>
+      </div>
+
+      <form id="form-account">
+        <div id="field-name">
+          <label for="name">Your first name</label>
+          <input id="name" autocomplete="given-name" placeholder="What should Buddy call you?">
+        </div>
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="new-password" required minlength="8" placeholder="8+ characters">
+        <div class="err" id="err-account"></div>
+        <button class="btn" id="btn-account" type="submit">Continue</button>
+      </form>
+
+      <div class="divider">or</div>
+      <button class="btn btn--google" id="btn-google" type="button">
+        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.2 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.2 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C41.4 34.9 44 30 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+        Continue with Google
+      </button>
+      <p class="fine">Free account. Your data stays yours.</p>
+    </div>
+
+    <!-- STEP 2: pair -->
+    <div class="card hidden" id="step-pair">
+      <div class="steps"><span class="on"></span><span class="on"></span><span></span></div>
+      <h1>Claim your Buddy</h1>
+      <p class="sub" id="pair-sub">Enter the 6-character code on the bottom of your Buddy.</p>
+      <form id="form-pair">
+        <input class="code-input" id="paircode" maxlength="6" autocomplete="off" spellcheck="false" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+        <div class="err" id="err-pair"></div>
+        <button class="btn" id="btn-pair" type="submit">Pair my Buddy</button>
+      </form>
+      <p class="fine"><a href="#" id="signout">Use a different account</a></p>
+    </div>
+
+    <!-- STEP 3: done -->
+    <div class="card hidden" id="step-done">
+      <div class="steps"><span class="on"></span><span class="on"></span><span class="on"></span></div>
+      <div class="success-mark">&#127769;</div>
+      <h1 id="done-title">You're all set</h1>
+      <p class="sub">Your Buddy knows who you are now. Three things to finish at home:</p>
+      <ol>
+        <li>Place Buddy on your nightstand, roughly an arm's length away, facing your chest.</li>
+        <li>Plug it in. It starts itself &mdash; no buttons.</li>
+        <li>Say <strong>&ldquo;hey buddy&rdquo;</strong> and say hi.</li>
+      </ol>
+      <p class="fine">New WiFi? Buddy broadcasts a hotspot called <strong>Buddy-Setup</strong> &mdash; join it from your phone and pick your network.</p>
+    </div>
+  </main>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script>
+  var API = "https://54-241-250-79.sslip.io";
+  firebase.initializeApp({
+    apiKey: "AIzaSyDv0B4UP4VfBCTtCSrKx6vyJiRRVDWSTE4",
+    authDomain: "buddy-sleep.firebaseapp.com",
+    projectId: "buddy-sleep",
+    appId: "1:252040406022:web:b866b94ff1d90e3292cf87"
+  });
+  var auth = firebase.auth();
+  var mode = "create";
+
+  function $(id){ return document.getElementById(id); }
+  function show(step){
+    ["step-account","step-pair","step-done"].forEach(function(s){
+      $(s).classList.toggle("hidden", s !== step);
+    });
+  }
+  function err(id, msg){
+    var el = $(id);
+    el.textContent = msg || "";
+    el.style.display = msg ? "block" : "none";
+  }
+  function friendly(e){
+    var c = (e && e.code) || "";
+    if (c.indexOf("email-already-in-use") >= 0) return "That email already has an account - use the Sign in tab.";
+    if (c.indexOf("invalid-credential") >= 0 || c.indexOf("wrong-password") >= 0) return "That email and password don't match.";
+    if (c.indexOf("weak-password") >= 0) return "Password needs at least 8 characters.";
+    if (c.indexOf("invalid-email") >= 0) return "That doesn't look like an email address.";
+    if (c.indexOf("popup-closed") >= 0) return "";
+    return (e && e.message) || "Something went wrong - try again.";
+  }
+
+  async function api(path, body){
+    var token = await auth.currentUser.getIdToken();
+    var res = await fetch(API + path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Authorization": "Bearer " + token },
+      body: JSON.stringify(body)
+    });
+    var data = await res.json().catch(function(){ return {}; });
+    if (!res.ok) {
+      var msg = (data.error && data.error.message) || ("Error " + res.status);
+      throw new Error(msg);
+    }
+    return data;
+  }
+
+  async function ensureProfile(name){
+    var tz = "UTC";
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; } catch(_){}
+    return api("/v1/user/signup", { name: name, tz: tz });
+  }
+
+  async function afterAuth(name){
+    var prof = await ensureProfile(name);
+    $("pair-sub").textContent = "Hi " + prof.name + "! Enter the 6-character code on the bottom of your Buddy.";
+    show("step-pair");
+    $("paircode").focus();
+  }
+
+  // --- tabs ---
+  $("tab-create").onclick = function(){
+    mode = "create";
+    this.classList.add("on"); $("tab-signin").classList.remove("on");
+    $("field-name").style.display = "";
+    $("password").autocomplete = "new-password";
+    err("err-account");
+  };
+  $("tab-signin").onclick = function(){
+    mode = "signin";
+    this.classList.add("on"); $("tab-create").classList.remove("on");
+    $("field-name").style.display = "none";
+    $("password").autocomplete = "current-password";
+    err("err-account");
+  };
+
+  // --- email/password ---
+  $("form-account").onsubmit = async function(ev){
+    ev.preventDefault();
+    err("err-account");
+    var name = $("name").value.trim();
+    if (mode === "create" && !name) { err("err-account", "Tell us your first name so Buddy knows what to call you."); return; }
+    $("btn-account").disabled = true;
+    try {
+      if (mode === "create") {
+        await auth.createUserWithEmailAndPassword($("email").value.trim(), $("password").value);
+      } else {
+        await auth.signInWithEmailAndPassword($("email").value.trim(), $("password").value);
+      }
+      await afterAuth(name || "there");
+    } catch(e) {
+      var m = friendly(e); if (m) err("err-account", m);
+    }
+    $("btn-account").disabled = false;
+  };
+
+  // --- google ---
+  $("btn-google").onclick = async function(){
+    err("err-account");
+    try {
+      var result = await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      var gname = $("name").value.trim() ||
+                  (result.user.displayName || "").split(" ")[0] || "there";
+      await afterAuth(gname);
+    } catch(e) {
+      var m = friendly(e); if (m) err("err-account", m);
+    }
+  };
+
+  // --- pair ---
+  $("paircode").oninput = function(){ this.value = this.value.toUpperCase().replace(/[^A-Z0-9]/g,""); };
+  $("form-pair").onsubmit = async function(ev){
+    ev.preventDefault();
+    err("err-pair");
+    var code = $("paircode").value.trim();
+    if (code.length !== 6) { err("err-pair", "The code is 6 characters."); return; }
+    $("btn-pair").disabled = true;
+    try {
+      await api("/v1/user/pair", { pair_code: code });
+      show("step-done");
+    } catch(e) {
+      var msg = /not found|no device/i.test(e.message)
+        ? "That code doesn't match any Buddy - double-check the sticker."
+        : e.message;
+      err("err-pair", msg);
+    }
+    $("btn-pair").disabled = false;
+  };
+
+  // --- session handling ---
+  $("signout").onclick = function(ev){ ev.preventDefault(); auth.signOut().then(function(){ show("step-account"); }); };
+  auth.onAuthStateChanged(function(user){
+    if (user && $("step-account").classList.contains("hidden") === false) {
+      // returning visitor already signed in: go claim
+      afterAuth((user.displayName || "").split(" ")[0] || "there").catch(function(){});
+    }
+  });
+</script>
+</body>
+</html>
