@@ -103,6 +103,10 @@
           <label for="name">Your first name</label>
           <input id="name" autocomplete="given-name" placeholder="What should Buddy call you?">
         </div>
+        <div id="field-tz">
+          <label for="tz">Your time zone</label>
+          <select id="tz" style="width:100%;height:46px;border:1px solid var(--border);border-radius:10px;padding:0 10px;font-size:15px;font-family:inherit;background:var(--warm-tan);color:var(--text);"></select>
+        </div>
         <label for="email">Email</label>
         <input id="email" type="email" autocomplete="email" required>
         <label for="password">Password</label>
@@ -196,9 +200,29 @@
     return data;
   }
 
+  // Timezone: auto-detected, but user-changeable -- alarms, greetings, and
+  // sleep-day boundaries all hang off this, so a wrong guess matters.
+  var TZ_CHOICES = [
+    "America/Los_Angeles","America/Denver","America/Chicago","America/New_York",
+    "America/Anchorage","Pacific/Honolulu","Europe/London","Europe/Paris",
+    "Asia/Bangkok","Asia/Singapore","Asia/Tokyo","Australia/Sydney"
+  ];
+  (function fillTz(){
+    var detected = "UTC";
+    try { detected = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; } catch(_){}
+    var sel = $("tz");
+    var list = TZ_CHOICES.indexOf(detected) >= 0 ? TZ_CHOICES : [detected].concat(TZ_CHOICES);
+    list.forEach(function(z){
+      var o = document.createElement("option");
+      o.value = z;
+      o.textContent = z.replace(/_/g," ").replace("America/","").replace("Europe/","").replace("Asia/","").replace("Pacific/","").replace("Australia/","") + (z === detected ? "  (detected)" : "");
+      if (z === detected) o.selected = true;
+      sel.appendChild(o);
+    });
+  })();
+
   async function ensureProfile(name){
-    var tz = "UTC";
-    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; } catch(_){}
+    var tz = $("tz").value || "UTC";
     return api("/v1/user/signup", { name: name, tz: tz });
   }
 
@@ -214,6 +238,7 @@
     mode = "create";
     this.classList.add("on"); $("tab-signin").classList.remove("on");
     $("field-name").style.display = "";
+    $("field-tz").style.display = "";
     $("password").autocomplete = "new-password";
     err("err-account");
   };
@@ -221,6 +246,7 @@
     mode = "signin";
     this.classList.add("on"); $("tab-create").classList.remove("on");
     $("field-name").style.display = "none";
+    $("field-tz").style.display = "none";
     $("password").autocomplete = "current-password";
     err("err-account");
   };
