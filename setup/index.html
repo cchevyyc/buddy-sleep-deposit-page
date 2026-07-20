@@ -226,8 +226,23 @@
     return api("/v1/user/signup", { name: name, tz: tz });
   }
 
+  async function apiGet(path){
+    var token = await auth.currentUser.getIdToken();
+    var res = await fetch(API + path, { headers: { "Authorization": "Bearer " + token } });
+    if (!res.ok) throw new Error("Error " + res.status);
+    return res.json();
+  }
+
   async function afterAuth(name){
     var prof = await ensureProfile(name);
+    if (prof.device_id) {
+      // Already paired: a returning owner should never see the pair form.
+      $("done-title").textContent = "Welcome back, " + prof.name;
+      document.querySelector("#step-done .sub").textContent =
+        "Your Buddy (" + prof.device_id + ") is already linked to this account. Nothing to do here.";
+      show("step-done");
+      return;
+    }
     $("pair-sub").textContent = "Hi " + prof.name + "! Enter the 6-character code on the bottom of your Buddy.";
     show("step-pair");
     $("paircode").focus();
